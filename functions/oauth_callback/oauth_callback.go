@@ -39,9 +39,12 @@ func HandleRequest(w http.ResponseWriter, r *http.Request) {
 		w.WriteHeader(http.StatusInternalServerError)
 		return
 	}
+	rdrQuery := url.Values{}
+	rdrQuery.Add("sandbox", fmt.Sprint(sandbox))
+	rdrQuery.Add("access_token", token.AccessToken)
+	rdrQuery.Add("merchant_id", r.URL.Query().Get("merchant_id"))
 	rdrUrl := fmt.Sprintf(
-		"https://manbeardo.github.io/clover-web-data-connector/?sandbox=%t#access_token=%s",
-		sandbox, url.QueryEscape(token.AccessToken),
+		"https://manbeardo.github.io/clover-web-data-connector/#%s", rdrQuery.Encode(),
 	)
 	w.Header().Add("Location", rdrUrl)
 	w.WriteHeader(http.StatusFound)
