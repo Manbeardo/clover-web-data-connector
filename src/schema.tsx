@@ -1,6 +1,8 @@
-import {dataTypeEnum} from 'tableau';
+import tableau, {TableInfo} from "tableau";
 
-export const schema: Array<tableau.TableInfo> = [
+console.log(tableau);
+
+export const schema: Array<TableInfo> = [
     {
         id: "inventoryItems",
         alias: "Inventory Items",
