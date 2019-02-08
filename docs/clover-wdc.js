@@ -63,6 +63,8 @@
 
   myConnector.init = function(initCallback) {
     tableau.authType = tableau.authTypeEnum.custom;
+    $("#datetimeType").text(typeof tableau.dataTypeEnum.datetime);
+    $("#datetimeValue").text(tableau.dataTypeEnum.datetime);
     initCallback();
   };
 
