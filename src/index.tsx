@@ -2,6 +2,9 @@ import "core-js/features/map";
 import "core-js/features/set";
 import "core-js/features/object";
 import "core-js/features/url";
+import "core-js/features/promise";
+import "core-js/features/string";
+import "core-js/features/array";
 import "raf/polyfill";
 import "whatwg-fetch";
 
