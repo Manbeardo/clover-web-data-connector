@@ -1,5 +1,7 @@
-import "core-js/es6";
-import "core-js/es7";
+import "core-js/features/map"
+import "core-js/features/set"
+import "core-js/features/url";
+import "core-js/features/url-search-params";
 import "raf/polyfill";
 import "whatwg-fetch";
 
